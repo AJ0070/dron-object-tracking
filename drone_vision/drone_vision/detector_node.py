@@ -47,8 +47,8 @@ class DetectorNode(Node):
                 detection = Detection2D()
 
                 x1, y1, x2, y2 = box.xyxy[0].cpu().numpy()
-                detection.bbox.center.position.x = float((x1 + x2) / 2)
-                detection.bbox.center.position.y = float((y1 + y2) / 2)
+                detection.bbox.center.x = float((x1 + x2) / 2)
+                detection.bbox.center.y = float((y1 + y2) / 2)
                 detection.bbox.size_x = float(x2 - x1)
                 detection.bbox.size_y = float(y2 - y1)
 
